@@ -27,7 +27,20 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
       length: tabs.length,
       child: Scaffold(
-
+        appBar: AppBar(
+          title: Text("Scrollable Tab"),
+          backgroundColor: Colors.green[700],
+          centerTitle: true,
+          brightness: Brightness.dart,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(30),
+            child: TabBar(
+              indicatorColor: Colors.white,
+              isScrollable: true,
+              tabs: tabs,
+            ),
+          ),
+        ),
         body: TabBarView(
           children: tabsContent,
         ),
