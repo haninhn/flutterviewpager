@@ -23,11 +23,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: TabBarView(
+
+    return DefaultTabController(
+      length: tabs.length,
+      child: Scaffold(
+
+        body: TabBarView(
           children: tabsContent,
         ),
-      );
+      ),
+    );
+  }
 }
    
-}
