@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  List<Tab> tabs = [
-    Tab(child: Text("Teal")),
-    Tab(child: Text("Green")),
-    Tab(child: Text("Blue")),
-    Tab(child: Text("Yellow")),
-    Tab(child: Text("Red")),
-    Tab(child: Text("Orange")),
-    Tab(child: Text("Grey")),
-  ];
+   final List<Tab> tabs;
+   final List<Widget> tabsContent;
+    // ignore: prefer_const_constructors_in_immutables
+    // ignore: use_key_in_widget_constructors
+   const HomePage({required this.tabs, required this.tabsContent});
 
-  List<Widget> tabsContent = [
-    Container(color: Colors.teal),
-    Container(color: Colors.green),
-    Container(color: Colors.teal),
-    Container(color: Colors.green),
-    Container(color: Colors.teal),
-    Container(color: Colors.teal),
-    Container(color: Colors.teal),
-  ];
+  // List<Tab> tabs = [
+  //   Tab(child: Text("Lessons")),
+  //   Tab(child: Text("Exams")),
+  //   Tab(child: Text("Recording")),
+  // ];
+
+  // List<Widget> tabsContent = [
+  //   Container(Text('lessons Page')),
+  //   Container(color: Colors.green),
+  //   Container(color: Colors.teal),
+  // ];
 
   // @override
   // Widget build(BuildContext context) {
@@ -51,6 +49,7 @@ class HomePage extends StatelessWidget {
   // }
 
 
+@override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: tabs.length,
@@ -73,7 +72,7 @@ class HomePage extends StatelessWidget {
                     tabs: tabs
                   ),
                 ),
-                const Expanded(
+                 Expanded(
                   child: TabBarView(
                   children: tabsContent ,
                 ))
@@ -84,5 +83,17 @@ class HomePage extends StatelessWidget {
   }
 }
 
-
+    // child: TabBarView(
+    //           children: [
+    //             Center(
+    //               child: Text("Lessons Pages"),
+    //             ),
+    //             Center(
+    //               child: Text("Exams Pages"),
+    //             ),
+    //             Center(
+    //               child: Text('Recording Page'),
+    //             ),
+    //           ],
+    //         )
    
